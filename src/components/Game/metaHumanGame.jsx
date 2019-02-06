@@ -1,9 +1,7 @@
 import React from 'react';
 
-import {
-    Hero,
-    Villain,
-} from '../../utils/inheritance(prototype)';
+import Hero from '../../utils/metaHumanBattle/hero.js';
+import Villain from '../../utils/metaHumanBattle/villain.js';
 
 import '../../App.css';
 
