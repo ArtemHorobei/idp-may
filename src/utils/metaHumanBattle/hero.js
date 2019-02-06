@@ -6,14 +6,14 @@ export default function Hero(name, health, kick, weapon, gift, ability) {
 
     this._gift = gift;
     this._ability = ability;
+
+    this.saveWorld = () => {
+      const damageValue = this._kick * weaponBoost[this._weapon] + (Hero.gifts[this._gift] * Hero.abilities[this._ability]);
+      return damageValue.toFixed(2);
+    };
 }
 
 Hero.prototype = Object.create(MetaHuman.prototype);
-
-Hero.prototype.saveWorld = function() {
-    const damageValue = this._kick * weaponBoost[this._weapon] + (Hero.gifts[this._gift] * Hero.abilities[this._ability]);
-    return damageValue.toFixed(2);
-};
 
 Hero.gifts = {
   'gift1': 1.12,

@@ -6,14 +6,14 @@ export default function Villain(name, health, kick, weapon, curse, special) {
 
     this._curse = curse;
     this._special = special;
+
+    this.destroyWorld = () => {
+      const damageValue = this._kick * weaponBoost[this._weapon] + (Villain.curses[this._curse] * Villain.specials[this._special]);
+      return damageValue.toFixed(2);
+    };
 }
 
 Villain.prototype = Object.create(MetaHuman.prototype);
-
-Villain.prototype.destroyWorld = function() {
-  const damageValue = this._kick * weaponBoost[this._weapon] + (Villain.curses[this._curse] * Villain.specials[this._special]);
-  return damageValue.toFixed(2);
-};
 
 Villain.curses = {
   'curse1': 1.16,
